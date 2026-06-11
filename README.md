@@ -1,6 +1,6 @@
 # PoolControl
 
-Custom Home Assistant integration and dashboard for **Goldline/Hayward Pro Logic automation and chlorination** systems, using a local TCP bridge (for example, WishMesh ESP32 bridge).
+Custom Home Assistant integration and dashboard for **Goldline/Hayward Pro Logic automation and chlorination** systems, using a local TCP bridge (for example, [WishMesh RS485 bridge](https://aircable.co/shop/product/acc2901-aircable-rs485-92)).
 
 ## What This Repository Includes
 
