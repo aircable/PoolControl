@@ -56,3 +56,9 @@ lovelace:
 ## Support
 
 - Issues: https://github.com/aircable/PoolControl/issues
+
+## Release Process
+
+- Update `CHANGELOG.md` first.
+- Create and push a tag like `v0.1.2`.
+- GitHub Actions workflow `Release From Changelog` will publish the release notes from that tag section.
