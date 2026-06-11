@@ -1,0 +1,6 @@
+{
+  "name": "PoolControl",
+  "content_in_root": false,
+  "country": ["US"],
+  "homeassistant": ">=2026.3.0"
+}

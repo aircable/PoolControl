@@ -1,0 +1,21 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "PoolControl Pool Controller",
+        "description": "Connect to your PoolControl pool controller via TCP bridge (ESP32)",
+        "data": {
+          "host": "Host IP address",
+          "port": "TCP Port"
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "Failed to connect to the PoolControl bridge. Check host/port.",
+      "unknown": "Unknown error occurred."
+    },
+    "abort": {
+      "already_configured": "This PoolControl bridge is already configured."
+    }
+  }
+}

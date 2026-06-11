@@ -1,0 +1,71 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "PoolControl Pool Controller",
+        "description": "Connect to your PoolControl pool controller via TCP bridge (ESP32)",
+        "data": {
+          "host": "Host IP address",
+          "port": "TCP Port"
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "Failed to connect to the PoolControl bridge. Check host/port.",
+      "unknown": "Unknown error occurred."
+    },
+    "abort": {
+      "already_configured": "This PoolControl bridge is already configured."
+    }
+  },
+  "entity": {
+    "sensor": {
+      "air_temp": {"name": "Air Temperature"},
+      "pool_temp": {"name": "Pool Temperature"},
+      "spa_temp": {"name": "Spa Temperature"},
+      "pool_chlorinator": {"name": "Pool Chlorinator"},
+      "spa_chlorinator": {"name": "Spa Chlorinator"},
+      "salt_level": {"name": "Salt Level"},
+      "pump_speed": {"name": "Pump Speed"},
+      "pump_power": {"name": "Pump Power"},
+      "status": {"name": "Status"},
+      "panel_time": {"name": "Panel Time"},
+      "display": {"name": "Panel Display"}
+    },
+    "switch": {
+      "filter": {"name": "Filter"},
+      "filter_low_speed": {"name": "Filter Low Speed"},
+      "lights": {"name": "Lights"},
+      "aux_1": {"name": "Aux 1"},
+      "aux_2": {"name": "Aux 2"},
+      "aux_3": {"name": "Aux 3"},
+      "aux_4": {"name": "Aux 4"},
+      "aux_5": {"name": "Aux 5"},
+      "aux_6": {"name": "Aux 6"},
+      "aux_7": {"name": "Aux 7"},
+      "pool_spa": {"name": "Pool/Spa Mode"},
+      "service": {"name": "Service Mode"}
+    },
+    "binary_sensor": {
+      "led_heater_1": {"name": "Heater"},
+      "led_valve_3": {"name": "Valve 3"},
+      "led_check_system": {"name": "Check System"},
+      "led_pool": {"name": "Pool Mode"},
+      "led_spa": {"name": "Spa Mode"},
+      "led_filter": {"name": "Filter Running"},
+      "led_lights": {"name": "Lights On"},
+      "led_aux_1": {"name": "Aux 1 On"},
+      "led_aux_2": {"name": "Aux 2 On"},
+      "led_service": {"name": "Service Mode"},
+      "led_aux_3": {"name": "Aux 3 On"},
+      "led_aux_4": {"name": "Aux 4 On"},
+      "led_aux_5": {"name": "Aux 5 On"},
+      "led_aux_6": {"name": "Aux 6 On"},
+      "led_valve_4": {"name": "Valve 4"},
+      "led_spillover": {"name": "Spillover"},
+      "led_super_chlorinate": {"name": "Super Chlorinate"},
+      "led_heater_auto_mode": {"name": "Heater Auto"},
+      "led_filter_low_speed": {"name": "Filter Low Speed"}
+    }
+  }
+}

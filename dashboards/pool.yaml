@@ -1,0 +1,114 @@
+title: Pool
+views:
+  - title: Overview
+    path: overview
+    icon: mdi:pool
+    cards:
+      - type: vertical-stack
+        cards:
+          - type: markdown
+            title: Panel Display
+            content: |
+              `{{ states('sensor.poolcontrol_panel_line_1') | default('', true) }}`
+              `{{ states('sensor.poolcontrol_panel_line_2') | default('', true) }}`
+          - type: entities
+            title: Live Temperatures
+            show_header_toggle: false
+            entities:
+              - entity: sensor.poolcontrol_pool_temperature
+                name: Water Temperature
+              - entity: sensor.poolcontrol_air_temperature
+                name: Air Temperature
+              - entity: sensor.poolcontrol_panel_day
+              - entity: sensor.poolcontrol_panel_time
+
+      - type: grid
+        title: Panel Keypad
+        columns: 3
+        square: true
+        cards:
+          - type: button
+            entity: button.poolcontrol_left
+            name: ""
+            icon: mdi:arrow-left-bold
+            tap_action:
+              action: call-service
+              service: button.press
+              target:
+                entity_id: button.poolcontrol_left
+          - type: button
+            entity: button.poolcontrol_menu
+            name: Menu
+            icon: mdi:menu
+            tap_action:
+              action: call-service
+              service: button.press
+              target:
+                entity_id: button.poolcontrol_menu
+          - type: button
+            entity: button.poolcontrol_right
+            name: ""
+            icon: mdi:arrow-right-bold
+            tap_action:
+              action: call-service
+              service: button.press
+              target:
+                entity_id: button.poolcontrol_right
+          - type: button
+            entity: button.poolcontrol_minus
+            name: ""
+            icon: mdi:minus
+            tap_action:
+              action: call-service
+              service: button.press
+              target:
+                entity_id: button.poolcontrol_minus
+          - type: button
+            entity: button.poolcontrol_mode
+            name: Mode
+            icon: mdi:pool
+            tap_action:
+              action: call-service
+              service: button.press
+              target:
+                entity_id: button.poolcontrol_mode
+          - type: button
+            entity: button.poolcontrol_plus
+            name: ""
+            icon: mdi:plus
+            tap_action:
+              action: call-service
+              service: button.press
+              target:
+                entity_id: button.poolcontrol_plus
+
+      - type: entities
+        title: Modes and Controls
+        show_header_toggle: false
+        entities:
+          - entity: binary_sensor.poolcontrol_pool_mode
+            icon: mdi:pool
+          - entity: binary_sensor.poolcontrol_spa_mode
+            name: Swim Jets
+          - entity: binary_sensor.poolcontrol_spillover
+            name: Massage
+          - entity: select.poolcontrol_filter_mode
+            name: Pump Speed
+          - entity: switch.poolcontrol_high_speed
+            name: Turbo
+          - entity: switch.poolcontrol_lights
+            name: Lights
+          - entity: switch.poolcontrol_heat_pump
+            name: Heater
+          - entity: binary_sensor.poolcontrol_valve_3
+            name: Waterfall LED
+
+      - type: history-graph
+        title: Temperature History
+        hours_to_show: 24
+        refresh_interval: 60
+        entities:
+          - entity: sensor.poolcontrol_pool_temperature
+            name: Water
+          - entity: sensor.poolcontrol_air_temperature
+            name: Air
